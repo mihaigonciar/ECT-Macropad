@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35201.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacropadDeviceController", "MacropadSerialTester\MacropadDeviceController.csproj", "{4F6F5D43-9748-4FC7-9F1A-B32E5DD8344B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EyecraftTech.PicoHandler", "EyecraftTech.PicoHandler\EyecraftTech.PicoHandler.csproj", "{14B43AE6-C159-48C2-8C65-82610AF9AC42}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EyecraftTech.Devices", "EyecraftTech.Devices\EyecraftTech.Devices.csproj", "{B58B6A12-ED16-46AE-B89B-FC6A3320D589}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EyecraftTech.Commons", "EyecraftTech.Commons\EyecraftTech.Commons.csproj", "{85DB5346-F08B-48A8-A32E-B45E20781121}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyecraftTech.Devices.Forms", "EyecraftTech.Devices.Forms\EyecraftTech.Devices.Forms.csproj", "{924315EB-1716-4BE8-B3AF-1F5B0A94BF5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F6F5D43-9748-4FC7-9F1A-B32E5DD8344B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F6F5D43-9748-4FC7-9F1A-B32E5DD8344B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F6F5D43-9748-4FC7-9F1A-B32E5DD8344B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F6F5D43-9748-4FC7-9F1A-B32E5DD8344B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14B43AE6-C159-48C2-8C65-82610AF9AC42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14B43AE6-C159-48C2-8C65-82610AF9AC42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14B43AE6-C159-48C2-8C65-82610AF9AC42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14B43AE6-C159-48C2-8C65-82610AF9AC42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B58B6A12-ED16-46AE-B89B-FC6A3320D589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B58B6A12-ED16-46AE-B89B-FC6A3320D589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B58B6A12-ED16-46AE-B89B-FC6A3320D589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B58B6A12-ED16-46AE-B89B-FC6A3320D589}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85DB5346-F08B-48A8-A32E-B45E20781121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85DB5346-F08B-48A8-A32E-B45E20781121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85DB5346-F08B-48A8-A32E-B45E20781121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85DB5346-F08B-48A8-A32E-B45E20781121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{924315EB-1716-4BE8-B3AF-1F5B0A94BF5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{924315EB-1716-4BE8-B3AF-1F5B0A94BF5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{924315EB-1716-4BE8-B3AF-1F5B0A94BF5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{924315EB-1716-4BE8-B3AF-1F5B0A94BF5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02D6C8B0-E847-4602-8F63-B6956C89814B}
+	EndGlobalSection
+EndGlobal

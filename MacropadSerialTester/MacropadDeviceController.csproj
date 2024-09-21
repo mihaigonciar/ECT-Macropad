@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IO.Ports" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EyecraftTech.Commons\EyecraftTech.Commons.csproj" />
+    <ProjectReference Include="..\EyecraftTech.Devices.Forms\EyecraftTech.Devices.Forms.csproj" />
+    <ProjectReference Include="..\EyecraftTech.Devices\EyecraftTech.Devices.csproj" />
+    <ProjectReference Include="..\EyecraftTech.PicoHandler\EyecraftTech.PicoHandler.csproj" />
+  </ItemGroup>
+
+</Project>
