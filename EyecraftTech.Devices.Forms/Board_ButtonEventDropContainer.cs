@@ -1,23 +1,17 @@
 ﻿namespace EyecraftTech.Devices.Forms
 {
-    public enum EventType
-    {
-        Click,
-        Press,
-        Release,
-        Increase,
-        Decrease
-    }
+    public enum ButtonEventType { Click, Press, Release }
+    public enum EncoderEventType { Increase, Decrease }
 
-    public partial class EventDropContainer : UserControl
+    public partial class Board_ButtonEventDropContainer : UserControl
     {
-        public EventDropContainer()
+        public Board_ButtonEventDropContainer()
         {
             InitializeComponent();
         }
 
         public Board_Button Target;
-        public EventType EventType { get; set; }
+        public ButtonEventType EventType { get; set; }
 
         public void Attach(Board_Button eventTrigger)
         {
@@ -26,13 +20,15 @@
 
         private void label1_DragEnter(object sender, DragEventArgs e)
         {
-            var x = e.Data.GetFormats();
+            // Deny data that doesn't inherit from IAction
+            if (e.Data.GetData(e.Data.GetFormats()[0]) is not IAction) return;
 
-            e.Effect = DragDropEffects.Copy;
+            e.Effect = DragDropEffects.All;
         }
 
         private void label1_DragDrop(object sender, DragEventArgs e)
         {
+            // Ensure that the data dropped is of type IAction
             if (e.Data.GetData(e.Data.GetFormats()[0]) is not IAction action) return;
 
             SetAction(action);
@@ -52,13 +48,13 @@
 
             switch (EventType)
             {
-                case EventType.Click:
+                case ButtonEventType.Click:
                     Target.OnClick(action);
                     return;
-                case EventType.Press:
+                case ButtonEventType.Press:
                     Target.OnPress(action);
                     return;
-                case EventType.Release:
+                case ButtonEventType.Release:
                     Target.OnRelease(action);
                     return;
 
@@ -67,6 +63,7 @@
 
         private void label1_MouseClick(object sender, MouseEventArgs e)
         {
+            // Unbind an action from the container
             if (e.Button == MouseButtons.Right) 
             {
                 SetAction(null);

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
-            DropContainerRelease = new EventDropContainer();
-            DropContainerClick = new EventDropContainer();
+            DropContainerRelease = new Board_ButtonEventDropContainer();
+            DropContainerClick = new Board_ButtonEventDropContainer();
             ButtonIDLabel = new Label();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            DropContainerPress = new EventDropContainer();
+            DropContainerPress = new Board_ButtonEventDropContainer();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -68,7 +68,7 @@
             DropContainerRelease.AllowDrop = true;
             DropContainerRelease.BackColor = Color.FromArgb(26, 26, 26);
             DropContainerRelease.Dock = DockStyle.Fill;
-            DropContainerRelease.EventType = EventType.Release;
+            DropContainerRelease.EventType = ButtonEventType.Release;
             DropContainerRelease.Location = new Point(57, 53);
             DropContainerRelease.Name = "DropContainerRelease";
             DropContainerRelease.Size = new Size(76, 12);
@@ -79,7 +79,7 @@
             DropContainerClick.AllowDrop = true;
             DropContainerClick.BackColor = Color.FromArgb(26, 26, 26);
             DropContainerClick.Dock = DockStyle.Fill;
-            DropContainerClick.EventType = EventType.Click;
+            DropContainerClick.EventType = ButtonEventType.Click;
             DropContainerClick.Location = new Point(57, 21);
             DropContainerClick.Name = "DropContainerClick";
             DropContainerClick.Size = new Size(76, 10);
@@ -143,7 +143,7 @@
             DropContainerPress.AllowDrop = true;
             DropContainerPress.BackColor = Color.FromArgb(26, 26, 26);
             DropContainerPress.Dock = DockStyle.Fill;
-            DropContainerPress.EventType = EventType.Press;
+            DropContainerPress.EventType = ButtonEventType.Press;
             DropContainerPress.Location = new Point(57, 37);
             DropContainerPress.Name = "DropContainerPress";
             DropContainerPress.Size = new Size(76, 10);
@@ -170,8 +170,8 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private EventDropContainer DropContainerRelease;
-        private EventDropContainer DropContainerClick;
-        private EventDropContainer DropContainerPress;
+        private Board_ButtonEventDropContainer DropContainerRelease;
+        private Board_ButtonEventDropContainer DropContainerClick;
+        private Board_ButtonEventDropContainer DropContainerPress;
     }
 }

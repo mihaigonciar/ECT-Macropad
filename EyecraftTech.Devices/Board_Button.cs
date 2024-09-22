@@ -5,11 +5,10 @@ using EyecraftTech.PicoHandler;
 
 namespace EyecraftTech.Devices
 {
-    public class Board_Button
+    public class Board_Button : BoardModuleBase
     {
         private bool _state = false;
 
-        public readonly string ID;
         private readonly int _idNumber;
 
         /// <summary>
@@ -52,15 +51,14 @@ namespace EyecraftTech.Devices
         public Color LEDColor { get; private set; } = Color.Purple;
         public float LEDBrightness { get; private set; } = 1f;
 
-        public bool Handled = false;
-
-        public readonly Board_B15E2J1_1 Board;
-
-        internal Board_Button(Board_B15E2J1_1 parentBoard, string iD, bool hasLED = true)
+        internal Board_Button(
+            Board_B15E2J1_1 parentBoard, 
+            string iD, 
+            int bytePosition,
+            int bitPosition,
+            bool hasLED = true)
+            : base(parentBoard, iD, DataReadMode.Bit, [bytePosition], [bitPosition])
         {
-            Board = parentBoard;
-
-            ID = iD;
             _idNumber = int.Parse(iD[1..]);
             HasLED = hasLED;
 
@@ -84,6 +82,11 @@ namespace EyecraftTech.Devices
             board.SendData($"F-{_idNumber}-{newColor.R}-{newColor.G}-{newColor.B}-{Math.Clamp(brightness, 0f, 1f)}", out _);
             
             ColorChanged?.Invoke(newColor, brightness);
+        }
+
+        public override void ProcessData(byte[] data)
+        {
+            State = Utils.IsBitSet(data[_bytesIndices[0]], _bitsIndices[0]);
         }
     }
 }

@@ -2,13 +2,10 @@
 
 namespace EyecraftTech.Devices
 {
-    public class Board_RotaryEncoder
+    public class Board_RotaryEncoder : BoardModuleBase
     {
         private byte _rawPosition = 0;
 
-        public readonly Board_B15E2J1_1 Board;
-
-        public readonly string ID;
         public readonly Board_Button Button;
 
         public byte RawPosition
@@ -43,12 +40,16 @@ namespace EyecraftTech.Devices
         public VoidEvent PulseUp;
         public VoidEvent PulseDown;
 
-        internal Board_RotaryEncoder(Board_B15E2J1_1 parentBoard, string id) 
+        internal Board_RotaryEncoder(
+            Board_B15E2J1_1 parentBoard, 
+            string id,
+            int buttonBytePosition,
+            int buttonBitPosition,
+            int byteIndex
+            ) 
+            : base(parentBoard, id, DataReadMode.Byte, [byteIndex], [-1]) 
         {
-            Board = parentBoard;
-
-            ID = id;
-            Button = new(parentBoard, id, false);
+            Button = new(parentBoard, id, buttonBytePosition, buttonBitPosition, false);
 
             Rotated += OnRotated;
         }
@@ -70,6 +71,11 @@ namespace EyecraftTech.Devices
                 PulseDown?.Invoke();
                 return;
             }
+        }
+
+        public override void ProcessData(byte[] data)
+        {
+            RawPosition = data[_bytesIndices[0]];
         }
     }
 }

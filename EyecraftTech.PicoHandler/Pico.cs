@@ -24,7 +24,7 @@ namespace EyecraftTech.PicoHandler
 
         private readonly SerialPort _serialPort;
 
-        public bool IsBoardConnected = false;
+        public bool IsDeviceConnected = false;
 
         public StringEvent RawDataReceived;
         public ByteArrayEvent DataReceived;
@@ -56,12 +56,12 @@ namespace EyecraftTech.PicoHandler
 
         private void OnHardwareDisconnected()
         {
-            IsBoardConnected = false;
+            IsDeviceConnected = false;
         }
 
         private void OnHardwareConnected()
         {
-            IsBoardConnected = true;
+            IsDeviceConnected = true;
         }
 
         public bool Connect(out string message)
@@ -108,7 +108,7 @@ namespace EyecraftTech.PicoHandler
         {
             message = "";
 
-            if (IsBoardConnected == false) return false;
+            if (IsDeviceConnected == false) return false;
 
             try
             {

@@ -55,13 +55,13 @@ namespace EyecraftTech.PicoHandler
 
             if (e.NewEvent.ClassPath.ClassName == "__InstanceCreationEvent")
             {
-                if (Pico.Board.IsBoardConnected) return;
+                if (Pico.Board.IsDeviceConnected) return;
 
                 OnDeviceConnected(deviceName, deviceID);
             }
             else if (e.NewEvent.ClassPath.ClassName == "__InstanceDeletionEvent")
             {
-                if (!Pico.Board.IsBoardConnected) return;
+                if (!Pico.Board.IsDeviceConnected) return;
 
                 OnDeviceRemoved(deviceName, deviceID);
             }

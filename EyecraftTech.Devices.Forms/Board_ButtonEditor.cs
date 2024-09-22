@@ -2,14 +2,14 @@
 
 namespace EyecraftTech.Devices.Forms
 {
-    public partial class ECT_Button : UserControl
+    public partial class Board_ButtonEditor : UserControl
     {
         public Color ButtonUpColor = Color.LightSkyBlue;
         public Color ButtonDownColor = Color.Cyan;
 
         private Board_Button _target;
 
-        public ECT_Button()
+        public Board_ButtonEditor()
         {
             InitializeComponent();
         }
