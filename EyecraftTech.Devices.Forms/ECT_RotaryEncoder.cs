@@ -1,6 +1,6 @@
 ﻿namespace EyecraftTech.Devices.Forms
 {
-    public partial class ECT_RotaryEncoder : ECT_Button
+    public partial class ECT_RotaryEncoder : Board_ButtonEditor
     {
         public ECT_RotaryEncoder()
         {

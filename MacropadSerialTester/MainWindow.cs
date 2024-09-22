@@ -6,7 +6,7 @@ namespace MacropadDeviceController
 {
     public partial class MainWindow : Form
     {
-        private readonly Board_B15E2J1_1 _board = new();
+        private readonly Board_B15E2J1_1 _board = new(Pico.Board);
 
         public MainWindow()
         {
@@ -18,6 +18,8 @@ namespace MacropadDeviceController
             Pico.Board.RawDataReceived += RawDataReceived;
 
             AttachControlsToBoard();
+
+            Controls.Add(new Board_ButtonEventDropContainerNEW(_board.F11, ButtonEventType.Click));
         }
 
         private void AttachControlsToBoard()

@@ -1,6 +1,6 @@
 ﻿namespace EyecraftTech.Devices.Forms
 {
-    partial class EventDropContainer
+    partial class Board_ButtonEventDropContainer
     {
         /// <summary> 
         /// Required designer variable.

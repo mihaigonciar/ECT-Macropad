@@ -1,5 +1,4 @@
 ﻿using SharpHook.Native;
-using System.Runtime.Serialization;
 
 namespace EyecraftTech.Devices
 {

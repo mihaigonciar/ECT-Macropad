@@ -1,6 +1,4 @@
-﻿using System.Runtime.Serialization;
-
-namespace EyecraftTech.Devices
+﻿namespace EyecraftTech.Devices
 {
     public interface IAction
     {

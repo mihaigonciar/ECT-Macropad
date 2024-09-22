@@ -1,6 +1,6 @@
 ﻿namespace EyecraftTech.Devices.Forms
 {
-    partial class ECT_Button
+    partial class Board_ButtonEditor
     {
         /// <summary> 
         /// Required designer variable.
